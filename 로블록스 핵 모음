@@ -1,0 +1,79 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Roblox by 쿠조",
+   LoadingTitle = "by 로블록스 쿠조 ",
+   LoadingSubtitle = "로딩 중입니다.",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Roblox by 쿠조 ㅣ 키",
+      Subtitle = "디스코드로 와주세요 !",
+      Note = "join my discord",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"쿠조키러기"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("메인 탭ㅣ✔", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("메인")
+
+Rayfield:Notify({
+   Title = "스크립트가 실행 중입니다. . .",
+   Content = "by 쿠조",
+   Duration = 5,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "알겠어요!!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Button = MainTab:CreateButton({
+   Name = "어드민 스크립트",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "스피드 조절",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "배드워즈 스크립트",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/AFGCLIENT/Snyware/main/Loader'))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "모두 날려버리기 ",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+   end,
+})
